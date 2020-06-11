@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="DeMobile.Site1" %>
+
+<html>
+<head runat="server">
+    <script type="text/javascript">
+        function ValidNumeric() {
+
+            var charCode = (event.which) ? event.which : event.keyCode;
+            if (charCode >= 48 && charCode <= 57) { return true; }
+            else { return false; }
+        } 
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">
+                <img src="img/DeMobile.jpg" class="img-fluid" width="80"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="usu_listar.aspx">Lista de Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cli_listar.aspx">Lista de cliente</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        <form id="form1" runat="server" style="margin-top: 25px;">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+    <script src="Scripts/jquery-3.0.0.slim.min.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    
+</body>
+</html>
+
