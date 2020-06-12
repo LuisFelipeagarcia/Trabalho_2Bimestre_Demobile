@@ -31,7 +31,7 @@
     
     <div class="row" style="margin-top: 15px">
         <div class="col-md-12 text-right">
-            <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" />
+            <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
         </div>
     </div>
     <div class="row" style="margin-top: 15px">

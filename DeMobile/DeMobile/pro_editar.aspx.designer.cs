@@ -11,7 +11,7 @@ namespace DeMobile
 {
 
 
-    public partial class pro_detalhes
+    public partial class pro_editar
     {
 
         /// <summary>
@@ -60,12 +60,21 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtVal;
 
         /// <summary>
-        /// Controle btnVoltar.
+        /// Controle btnEditar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+
+        /// <summary>
+        /// Controle lblResultado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultado;
     }
 }

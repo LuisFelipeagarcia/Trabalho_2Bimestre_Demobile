@@ -8,14 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace DeMobile
 {
-    public partial class pro_detalhes : System.Web.UI.Page
+    public partial class pro_editar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (CapturaID())
+            if (!Page.IsPostBack) 
             {
-                DadosConsulta();
+                if (CapturaID())
+                {
+                    DadosConsulta();
+                }
             }
+            
 
         }
 
@@ -73,9 +77,37 @@ namespace DeMobile
             return Request.QueryString.AllKeys.Contains("id_prod");
         }
 
-        protected void btnVoltar_Click(object sender, EventArgs e)
+        protected void btnEditar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("pro_listar.aspx");
+            var idProduto = obterIDProduto();
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd.Connection = Conexao.Connection;
+                cmd.Parameters.AddWithValue("id", idProduto);
+                cmd.CommandText = @"update produto set nom_prod = @nome,
+                                                       des_nom_prod = @descricao,
+                                                       qtd_esto_prod = @quantidade,
+                                                       preco_unit_prod = @valor
+                                                       where id_prod = @id;";
+
+                cmd.Parameters.AddWithValue("nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("descricao", txtDesc.Text);
+                cmd.Parameters.AddWithValue("quantidade", txtQtd.Text);
+                cmd.Parameters.AddWithValue("valor", txtVal.Text);
+
+                Conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                Response.Redirect("pro_listar.aspx");
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "Falha" + ex.Message;
+            }
+            finally
+            {
+                Conexao.Desconectar();
+            }
         }
     }
 }

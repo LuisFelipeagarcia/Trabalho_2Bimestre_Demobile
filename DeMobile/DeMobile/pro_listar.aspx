@@ -46,7 +46,7 @@
                         <%# DataBinder.Eval(Container.DataItem, "id_prod") %>
                     </td>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "des_nom_prod") %>
+                        <%# DataBinder.Eval(Container.DataItem, "nom_prod") %>
                     </td>
                     <td>
                         <label>R$</label>
@@ -57,26 +57,26 @@
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="lnkDetalhes" runat="server">
-                            <a href="<%# Eval("id_prod", "prod_detalhes.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_prod", "pro_detalhes.aspx?id_prod={0}") %>">
                                 <span class="fas fa-eye"></span>
                             </a>
                         </asp:LinkButton>
                         <asp:LinkButton ID="LnkEditar" runat="server">
-                            <a href="<%# Eval("id_prod", "prod_editar.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_prod", "pro_editar.aspx?id_prod={0}") %>">
                                 <span class="fas fa-pencil-alt"></span>
                             </a>
                         </asp:LinkButton>
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="LnkPedir" runat="server">
-                            <a href="<%# Eval("id_prod", "prod_fazerPedido.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_prod", "pro_fazerPedido.aspx?id_prod={0}") %>">
                                 <span class="fas fa-tag"></span>
                             </a>
                         </asp:LinkButton>
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="LnkRemover" runat="server">
-                            <a href="<%# Eval("id_prod", "prod_remover.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_prod", "pro_remover.aspx?id_prod={0}") %>">
                                 <span class="fas fa-trash-alt"></span>
                             </a>
                         </asp:LinkButton>

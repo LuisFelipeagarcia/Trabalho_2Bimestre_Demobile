@@ -17,7 +17,7 @@ namespace DeMobile
         }
         private void CarregarUsuarios()
         {
-            string query = @"select id_prod, des_nom_prod, qtd_esto_prod, preco_unit_prod from produto";
+            string query = @"select id_prod, nom_prod, qtd_esto_prod, preco_unit_prod from produto";
             DataTable dt = new DataTable();
             try
             {
