@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="cli_listar.aspx.cs" Inherits="DeMobile.cli_listar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="pro_listar.aspx.cs" Inherits="DeMobile.pro_listar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -13,7 +13,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-center text-primary">
-        <h2>Listagem de Clientes</h2>
+        <h2>Listagem de Produtos</h2>
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-12 text-right">
@@ -27,10 +27,15 @@
                     <thead>
                         <tr>
                             <td style="width:10%"><strong>ID</strong></td>
-                            <td style="width:50%"><strong>Nome</strong></td>
-                            <td style="width:10%; text-align:center"><strong>Status</strong></td>
-                            <td style="width:20%; text-align:center"><strong>Vizualizar/Editar</strong></td>
-                            <td style="width:10%; text-align:center"><strong>Inativar</strong></td>
+                            <td style="width:33%"><strong>Descrição</strong></td>
+                            <td style="width:15%"><strong>Valor p/<br/> Un.</strong></td>
+                            <td style="width:15%; text-align:center"><strong>qtde estoque</strong></td>
+                            <!--Funções-->
+                            <td style="width:7%; text-align:center"><strong>Vizualizar/</strong>
+                                                                    <strong>Editar</strong>
+                            </td>
+                            <td style="width:10%; text-align:center"><strong>Fazer Pedido</strong></td>
+                            <td style="width:10%; text-align:center"><strong>Remover</strong></td>
                         </tr>
                     </thead>
                
@@ -38,29 +43,40 @@
             <ItemTemplate>
                 <tr>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "id_cli") %>
+                        <%# DataBinder.Eval(Container.DataItem, "id_prod") %>
                     </td>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "nom_cli") %>
+                        <%# DataBinder.Eval(Container.DataItem, "des_nom_prod") %>
+                    </td>
+                    <td>
+                        <label>R$</label>
+                        <%# DataBinder.Eval(Container.DataItem, "preco_unit_prod") %>
                     </td>
                     <td style="text-align:center">
-                        <%# DataBinder.Eval(Container.DataItem, "stt_cli") %>
+                        <%# DataBinder.Eval(Container.DataItem, "qtd_esto_prod") %>
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="lnkDetalhes" runat="server">
-                            <a href="<%# Eval("id_cli", "cli_detalhes.aspx?id_cli={0}") %>">
+                            <a href="<%# Eval("id_prod", "prod_detalhes.aspx?id_prod={0}") %>">
                                 <span class="fas fa-eye"></span>
                             </a>
                         </asp:LinkButton>
                         <asp:LinkButton ID="LnkEditar" runat="server">
-                            <a href="<%# Eval("id_cli", "cli_editar.aspx?id_cli={0}") %>">
+                            <a href="<%# Eval("id_prod", "prod_editar.aspx?id_prod={0}") %>">
                                 <span class="fas fa-pencil-alt"></span>
                             </a>
                         </asp:LinkButton>
                     </td>
                     <td style="text-align:center">
+                        <asp:LinkButton ID="LnkPedir" runat="server">
+                            <a href="<%# Eval("id_prod", "prod_fazerPedido.aspx?id_prod={0}") %>">
+                                <span class="fas fa-tag"></span>
+                            </a>
+                        </asp:LinkButton>
+                    </td>
+                    <td style="text-align:center">
                         <asp:LinkButton ID="LnkRemover" runat="server">
-                            <a href="<%# Eval("id_cli", "cli_remover.aspx?id_cli={0}") %>">
+                            <a href="<%# Eval("id_prod", "prod_remover.aspx?id_prod={0}") %>">
                                 <span class="fas fa-trash-alt"></span>
                             </a>
                         </asp:LinkButton>

@@ -107,6 +107,9 @@
     <Content Include="Global.asax" />
     <Content Include="img\DeMobile.jpg" />
     <Content Include="Logout.aspx" />
+    <Content Include="pro_detalhes.aspx" />
+    <Content Include="pro_inserir.aspx" />
+    <Content Include="pro_listar.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -286,6 +289,27 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="pro_detalhes.aspx.cs">
+      <DependentUpon>pro_detalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pro_detalhes.aspx.designer.cs">
+      <DependentUpon>pro_detalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pro_inserir.aspx.cs">
+      <DependentUpon>pro_inserir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pro_inserir.aspx.designer.cs">
+      <DependentUpon>pro_inserir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pro_listar.aspx.cs">
+      <DependentUpon>pro_listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pro_listar.aspx.designer.cs">
+      <DependentUpon>pro_listar.aspx</DependentUpon>
     </Compile>
     <Compile Include="usu_detalhes.aspx.cs">
       <DependentUpon>usu_detalhes.aspx</DependentUpon>

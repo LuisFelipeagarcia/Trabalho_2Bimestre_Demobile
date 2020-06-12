@@ -8,6 +8,12 @@
             var charCode = (event.which) ? event.which : event.keyCode;
             if (charCode >= 48 && charCode <= 57) { return true; }
             else { return false; }
+        }
+        function ValidNumericPonto() {
+
+            var charCode = (event.which) ? event.which : event.keyCode;
+            if (charCode >= 48 && charCode <= 57 || charCode == 46) { return true; }
+            else { return false; }
         } 
     </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -33,6 +39,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cli_listar.aspx">Lista de cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pro_listar.aspx">Lista de Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Logout.aspx">Sair</a>
