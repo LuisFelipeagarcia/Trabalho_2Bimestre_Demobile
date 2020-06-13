@@ -68,7 +68,7 @@
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-12 text-right">
-            <asp:Button ID="btnRemover" CssClass="btn btn-primary" runat="server" Text="Voltar" OnClick="btnRemover_Click" />
+            <asp:Button ID="btnRemover" CssClass="btn btn-primary" runat="server" Text="Inativar" OnClick="btnRemover_Click" />
         </div>
     </div>
     <div class="row" style="margin-top: 15px">

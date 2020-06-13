@@ -21,7 +21,7 @@
         </div>
     </div>
 <p>
-        <asp:Repeater ID="rptUsuarios" runat="server">
+        <asp:Repeater ID="rptUsuarios" runat="server" OnItemDataBound="rptUsuarios_ItemDataBound">
             <HeaderTemplate>
                 <table class="table table-hover" id="sisDataTable">
                     <thead>
@@ -43,8 +43,9 @@
                     <td>
                         <%# DataBinder.Eval(Container.DataItem, "nom_cli") %>
                     </td>
-                    <td style="text-align:center">
+                    <td id="sttcli" style="text-align:center">
                         <%# DataBinder.Eval(Container.DataItem, "stt_cli") %>
+                        
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="lnkDetalhes" runat="server">
