@@ -20,8 +20,8 @@
             <label>Status</label>
             <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control" >
                 <asp:ListItem Selected="True" Value=""></asp:ListItem>
-                <asp:ListItem Value="ativo">Ativo</asp:ListItem>
-                <asp:ListItem Value="inativo">Inativo</asp:ListItem>
+                <asp:ListItem Value="Ativo">Ativo</asp:ListItem>
+                <asp:ListItem Value="Inativo">Inativo</asp:ListItem>
             </asp:DropDownList>
         </div>
     </div>

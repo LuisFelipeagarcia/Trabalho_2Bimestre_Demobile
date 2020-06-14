@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="pro_listar.aspx.cs" Inherits="DeMobile.pro_listar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ped_listar.aspx.cs" Inherits="DeMobile.ped_listar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -13,30 +13,29 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-center text-primary">
-        <h2>Listagem de Produtos</h2>
+        <h2>Listagem de Pedidos</h2>
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-12 text-right">
-            <asp:Button ID="btnAdicionar" CssClass="btn btn-primary" runat="server" Text="Adicionar" OnClick="btnAdicionar_Click" />
+            <asp:Button ID="btnAdicionar" CssClass="btn btn-primary" runat="server" Text="Adicionar" />
         </div>
     </div>
 <p>
-        <asp:Repeater ID="rptUsuarios" runat="server" OnItemDataBound="rptUsuarios_ItemDataBound">
+        <asp:Repeater ID="rptUsuarios" runat="server" OnItemDataBound="rptUsuarios_ItemDataBound" >
             <HeaderTemplate>
                 <table class="table table-hover" id="sisDataTable">
                     <thead>
                         <tr>
-                            <td style="width:10%"><strong>ID</strong></td>
-                            <td style="width:30%"><strong>Descrição</strong></td>
-                            <td style="width:10%"><strong>Valor p/<br/> Un.</strong></td>
-                            <td style="width:15%; text-align:center"><strong>qtde estoque</strong></td>
-                            <td style="width:8%"><strong>Status</strong></td>
+                            <td style="width:5%"><strong>ID</strong></td>
+                            <td style="width:25%"><strong>Cliente</strong></td>
+                            <td style="width:25%"><strong>Produto</strong></td>
+                            <td style="width:15%"><strong>qtde de produtos</strong></td>
+                            <td style="width:10%"><strong>Valor Final</strong></td>
+                            <td style="width:10%; text-align:center"><strong>Status</strong></td>
                             <!--Funções-->
-                            <td style="width:7%; text-align:center"><strong>Vizualizar/</strong>
+                            <td style="width:10%; text-align:center"><strong>Vizualizar/</strong>
                                                                     <strong>Editar</strong>
                             </td>
-                            <td style="width:10%; text-align:center"><strong>Fazer Pedido</strong></td>
-                            <td style="width:10%; text-align:center"><strong>Inativar</strong></td>
                         </tr>
                     </thead>
                
@@ -44,47 +43,39 @@
             <ItemTemplate>
                 <tr>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "id_prod") %>
+                        <%# DataBinder.Eval(Container.DataItem, "id_ped") %>
+                    </td>
+                    <td>
+                        <%# DataBinder.Eval(Container.DataItem, "nom_cli") %>
                     </td>
                     <td>
                         <%# DataBinder.Eval(Container.DataItem, "nom_prod") %>
                     </td>
+                    <td style="text-align:center">
+                        <%# DataBinder.Eval(Container.DataItem, "qtd_ped") %>
+                    </td>
                     <td>
                         <label>R$</label>
-                        <%# DataBinder.Eval(Container.DataItem, "preco_unit_prod") %>
+                        <%# DataBinder.Eval(Container.DataItem, "valor_final_ped") %>
                     </td>
+                    
                     <td style="text-align:center">
-                        <%# DataBinder.Eval(Container.DataItem, "qtd_esto_prod") %>
-                    </td>
-                    <td style="text-align:center">
-                        <%# DataBinder.Eval(Container.DataItem, "stt_prod") %>
+                        <%# DataBinder.Eval(Container.DataItem, "stt_ped") %>
                     </td>
                     <td style="text-align:center">
                         <asp:LinkButton ID="lnkDetalhes" runat="server">
-                            <a href="<%# Eval("id_prod", "pro_detalhes.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_ped", "ped_detalhes.aspx?id_ped={0}") %>">
                                 <span class="fas fa-eye"></span>
                             </a>
                         </asp:LinkButton>
                         <asp:LinkButton ID="LnkEditar" runat="server">
-                            <a href="<%# Eval("id_prod", "pro_editar.aspx?id_prod={0}") %>">
+                            <a href="<%# Eval("id_ped", "ped_editar.aspx?id_ped={0}") %>">
                                 <span class="fas fa-pencil-alt"></span>
                             </a>
                         </asp:LinkButton>
                     </td>
-                    <td style="text-align:center">
-                        <asp:LinkButton ID="LnkPedir" runat="server">
-                            <a href="<%# Eval("id_prod", "pro_fazerPedido.aspx?id_prod={0}") %>">
-                                <span class="fas fa-tag"></span>
-                            </a>
-                        </asp:LinkButton>
-                    </td>
-                    <td style="text-align:center">
-                        <asp:LinkButton ID="LnkRemover" runat="server">
-                            <a href="<%# Eval("id_prod", "pro_remover.aspx?id_prod={0}") %>">
-                                <span class="fas fa-trash-alt"></span>
-                            </a>
-                        </asp:LinkButton>
-                    </td>
+                    
+                    
                 </tr>
             </ItemTemplate>
             <FooterTemplate>

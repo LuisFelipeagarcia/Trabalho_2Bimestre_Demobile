@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="text-center text-primary">
+        <h2>Remover Usuário</h2>
+    </div>
     <div class="row" style="margin-top:15px">
         <div class="col-md-1">
             <label>ID: </label>

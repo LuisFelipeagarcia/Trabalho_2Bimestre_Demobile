@@ -11,17 +11,26 @@ namespace DeMobile
 {
 
 
-    public partial class pro_editar
+    public partial class pro_fazerPedido
     {
 
         /// <summary>
-        /// Controle txtId.
+        /// Controle rfvEmail.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtId;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+
+        /// <summary>
+        /// Controle txtEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// Controle txtNome.
@@ -33,13 +42,13 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtNome;
 
         /// <summary>
-        /// Controle ddlStatus.
+        /// Controle txtQtd.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
+        protected global::System.Web.UI.WebControls.TextBox txtQtd;
 
         /// <summary>
         /// Controle txtDesc.
@@ -51,15 +60,6 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
 
         /// <summary>
-        /// Controle txtQtd.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQtd;
-
-        /// <summary>
         /// Controle txtVal.
         /// </summary>
         /// <remarks>
@@ -69,13 +69,31 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtVal;
 
         /// <summary>
-        /// Controle btnEditar.
+        /// Controle rfvnqtd.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditar;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvnqtd;
+
+        /// <summary>
+        /// Controle txtnqtd.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtnqtd;
+
+        /// <summary>
+        /// Controle btnFazerPedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFazerPedido;
 
         /// <summary>
         /// Controle lblResultado.

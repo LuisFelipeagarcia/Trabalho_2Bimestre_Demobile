@@ -3,14 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace DeMobile
 {
-    public partial class cli_listar : System.Web.UI.Page
+    public partial class ped_listar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,12 +17,18 @@ namespace DeMobile
         }
         private void CarregarUsuarios()
         {
-            string query = @"select id_cli, nom_cli, stt_cli from cliente ";
+            string query = @"select p.id_ped, c.nom_cli, o.nom_prod, p.qtd_ped, p.valor_final_ped, p.stt_ped 
+                            from pedido as p
+                            join cliente as c on c.id_cli = p.cliente
+                            join produto as o on o.id_prod = p.produto";
+            
             DataTable dt = new DataTable();
             try
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, Conexao.Connection);
+                
                 da.Fill(dt);
+                
 
                 //Popular repeater
                 rptUsuarios.DataSource = dt;
@@ -37,38 +42,32 @@ namespace DeMobile
 
         }
 
-
-        protected void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("cli_inserir.aspx");
-        }
-
         protected void rptUsuarios_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var lnkRemover = (LinkButton)e.Item.FindControl("lnkRemover");
+            var lnkEditar = (LinkButton)e.Item.FindControl("lnkEditar");
             if (e.Item.ItemType == ListItemType.Item ||
                 e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 object id = e.Item.ItemIndex + 1;
-                
+
 
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = Conexao.Connection;
-                    cmd.CommandText = @"select stt_cli from cliente where id_cli =@id";
+                    cmd.CommandText = @"select stt_ped from pedido where id_ped =@id";
                     cmd.Parameters.AddWithValue("@id", id);
                     Conexao.Conectar();
                     var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
+
+                        var stt = reader["stt_ped"].ToString();
                         
-                        var stt = reader["stt_cli"].ToString();
-                        
-                        if (stt.ToString() == "Inativo") 
+                        if (stt.ToString() == "Finalizado" || stt.ToString() == "Cancelado")
                         {
-                            lnkRemover.Visible = false;
+                            lnkEditar.Visible = false;
                         }
 
                     }
@@ -82,8 +81,6 @@ namespace DeMobile
                     Conexao.Desconectar();
                 }
             }
-
-
         }
     }
 }

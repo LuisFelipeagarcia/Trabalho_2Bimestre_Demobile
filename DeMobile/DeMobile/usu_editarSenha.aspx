@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-primary text-center">
-        <h2>Edição de Usuário</h2>
+        <h2>Edição da Senha do Usuário</h2>
     </div>
 
     <div class="row" style="margin-top:15px">

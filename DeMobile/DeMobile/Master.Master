@@ -15,6 +15,7 @@
             if (charCode >= 48 && charCode <= 57 || charCode == 46) { return true; }
             else { return false; }
         } 
+        
     </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -35,13 +36,16 @@
             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="usu_listar.aspx">Lista de Usuários</a>
+                        <a class="nav-link" href="usu_listar.aspx">Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cli_listar.aspx">Lista de cliente</a>
+                        <a class="nav-link" href="cli_listar.aspx">clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pro_listar.aspx">Lista de Produtos</a>
+                        <a class="nav-link" href="pro_listar.aspx">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ped_listar.aspx">Pedidos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Logout.aspx">Sair</a>

@@ -100,6 +100,7 @@ namespace DeMobile
                 Conexao.Conectar();
                 cmd.ExecuteNonQuery();
                 lblResultado.Text += "Inserido";
+                Response.Redirect("cli_listar.aspx");
             }
             catch (Exception ex)
             {

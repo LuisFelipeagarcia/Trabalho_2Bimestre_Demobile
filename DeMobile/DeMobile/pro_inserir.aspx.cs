@@ -23,15 +23,16 @@ namespace DeMobile
                 cmd.Connection = Conexao.Connection;
                 
                 cmd.CommandText = @"insert into produto (nom_prod, des_nom_prod, qtd_esto_prod, 
-                                preco_unit_prod)
+                                preco_unit_prod, stt_prod)
                                 values
-                                (@nome, @descricao, @quantidade, @valor);";
+                                (@nome, @descricao, @quantidade, @valor, @status);";
 
                 
                 cmd.Parameters.AddWithValue("nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("descricao", txtDesc.Text);
                 cmd.Parameters.AddWithValue("quantidade", txtQtd.Text);
                 cmd.Parameters.AddWithValue("valor", txtVal.Text);
+                cmd.Parameters.AddWithValue("status", "A".ToString());
                 Conexao.Conectar();
                 cmd.ExecuteNonQuery();
                 lblResultado.Text += "Inserido";

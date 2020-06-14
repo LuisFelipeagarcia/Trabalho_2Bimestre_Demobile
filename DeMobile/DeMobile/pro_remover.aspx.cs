@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace DeMobile
 {
-    public partial class pro_detalhes : System.Web.UI.Page
+    public partial class pro_remover : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -73,9 +73,31 @@ namespace DeMobile
             return Request.QueryString.AllKeys.Contains("id_prod");
         }
 
-        protected void btnVoltar_Click(object sender, EventArgs e)
+        protected void btnInativar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("pro_listar.aspx");
+            var idProduto = obterIDProduto();
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                cmd.Connection = Conexao.Connection;
+                cmd.Parameters.AddWithValue("id", idProduto);
+                cmd.CommandText = @"update produto set stt_prod = @status
+                                                       where id_prod = @id;";
+
+                
+                cmd.Parameters.AddWithValue("status", "I".ToString());
+                Conexao.Conectar();
+                cmd.ExecuteNonQuery();
+                Response.Redirect("pro_listar.aspx");
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "Falha" + ex.Message;
+            }
+            finally
+            {
+                Conexao.Desconectar();
+            }
         }
     }
 }

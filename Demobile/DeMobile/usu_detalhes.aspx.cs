@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace DeMobile
 {
-    public partial class pro_detalhes : System.Web.UI.Page
+    public partial class usu_detalhes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,25 +21,24 @@ namespace DeMobile
 
         private void DadosConsulta()
         {
-            var idProduto = obterIDProduto();
+            var idCliente = obterIDCliente();
 
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = Conexao.Connection;
-                cmd.CommandText = @"select id_prod, nom_prod, des_nom_prod, qtd_esto_prod, preco_unit_prod, stt_prod from produto where id_prod =@id";
-                cmd.Parameters.AddWithValue("@id", idProduto);
+                cmd.CommandText = @"select id_usu, nom_usu, log_usu, nivel from usuario where id_usu =@id";
+                cmd.Parameters.AddWithValue("@id", idCliente);
                 Conexao.Conectar();
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    txtId.Text = reader["id_prod"].ToString();
-                    txtNome.Text = reader["nom_prod"].ToString();
-                    txtDesc.Text = reader["des_nom_prod"].ToString();
-                    txtQtd.Text = reader["qtd_esto_prod"].ToString();
-                    txtVal.Text = reader["preco_unit_prod"].ToString();
-                    ddlStatus.Text = reader["stt_prod"].ToString();
+                    txtId.Text = reader["id_usu"].ToString();
+                    txtNome.Text = reader["nom_usu"].ToString();
+                    txtLogin.Text = reader["log_usu"].ToString();
+                    ddlNivel.Text = reader["nivel"].ToString();
+
                 }
             }
             catch (Exception ex)
@@ -52,10 +51,10 @@ namespace DeMobile
             }
         }
 
-        private object obterIDProduto()
+        private object obterIDCliente()
         {
             var id = 0;
-            var idURL = Request.QueryString["id_prod"];
+            var idURL = Request.QueryString["id_usu"];
 
             if (!int.TryParse(idURL, out id))
             {
@@ -70,12 +69,12 @@ namespace DeMobile
 
         private bool CapturaID()
         {
-            return Request.QueryString.AllKeys.Contains("id_prod");
+            return Request.QueryString.AllKeys.Contains("id_usu");
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("pro_listar.aspx");
+            Response.Redirect("usu_listar.aspx");
         }
     }
 }

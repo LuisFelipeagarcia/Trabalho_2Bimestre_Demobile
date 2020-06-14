@@ -11,7 +11,7 @@ namespace DeMobile
 {
 
 
-    public partial class pro_editar
+    public partial class ped_editar
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Controle txtNome.
+        /// Controle txtNomeCli.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeCli;
 
         /// <summary>
         /// Controle ddlStatus.
@@ -42,6 +42,42 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
 
         /// <summary>
+        /// Controle txtEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// Controle txtDdd.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDdd;
+
+        /// <summary>
+        /// Controle txtFone.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFone;
+
+        /// <summary>
+        /// Controle txtNomeprod.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeprod;
+
+        /// <summary>
         /// Controle txtDesc.
         /// </summary>
         /// <remarks>
@@ -51,22 +87,22 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
 
         /// <summary>
-        /// Controle txtQtd.
+        /// Controle txtnqtd.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQtd;
+        protected global::System.Web.UI.WebControls.TextBox txtnqtd;
 
         /// <summary>
-        /// Controle txtVal.
+        /// Controle txtValF.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVal;
+        protected global::System.Web.UI.WebControls.TextBox txtValF;
 
         /// <summary>
         /// Controle btnEditar.
@@ -78,12 +114,30 @@ namespace DeMobile
         protected global::System.Web.UI.WebControls.Button btnEditar;
 
         /// <summary>
-        /// Controle lblResultado.
+        /// Controle lblMsg.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
+
+        /// <summary>
+        /// Controle lblIdP.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdP;
+
+        /// <summary>
+        /// Controle lblEstoque.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstoque;
     }
 }
