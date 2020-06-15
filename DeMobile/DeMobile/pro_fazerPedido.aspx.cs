@@ -123,7 +123,7 @@ namespace DeMobile
                    
 
                     var estoque = Convert.ToInt32(reader["qtd_esto_prod"].ToString());
-                    if (Convert.ToInt32(txtnqtd.Text) < estoque)
+                    if (Convert.ToInt32(txtnqtd.Text) <= estoque & Convert.ToInt32(txtnqtd.Text) > 0)
                     {
                         return true;
                     }
