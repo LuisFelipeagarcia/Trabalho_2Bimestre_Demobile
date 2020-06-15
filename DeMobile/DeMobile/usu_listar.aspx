@@ -57,7 +57,7 @@
                                 <span class="fas fa-pencil-alt"></span>
                             </a>
                         </asp:LinkButton>
-                        <asp:LinkButton ID="LinkEditarSenha" runat="server">
+                        <asp:LinkButton ID="LnkEditarSenha" runat="server">
                             <a href="<%# Eval("id_usu", "usu_editarSenha.aspx?id_usu={0}") %>">
                                 <span class="fas fa-key"></span>
                             </a>
